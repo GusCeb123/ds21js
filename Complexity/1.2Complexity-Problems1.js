@@ -1,32 +1,32 @@
 //Ceballos Miranda Gustavo
 var limite = parseInt(prompt("Ingresa el limite(numero): "));
 
-Erastothenes(limite);
+erstt(limite);
 
-function Erastothenes(limite) {
-	var primos = [];
+function erstt(limite) {
+	var prm = [];
 
 	for (var i = 0; i < limite; i += 1) {
 		if (i != 0 && i != 1) {
-			primos.push(true);
+			prm.push(true);
 		}
 		else {
-			primos.push(false);
+			prm.push(false);
 		}
 	}
 
 	for (var i = 0; i < limite; i += 1) {
-		if (primos[i]) {
+		if (prm[i]) {
 			for (var j = i + i; j < limite; j += i) {
-				primos[j] = false;
+				prm[j] = false;
 			}
 		}
 	}
-	var sonprimos = [];
+	var sonprm = [];
 	for (var i = 0; i < limite; i += 1) {
-		if (primos[i]) {
-			sonprimos.push(i);
+		if (prm[i]) {
+			sonprm.push(i);
 		}
 	}
-	return sonprimos;
+	return sonprm;
 }
